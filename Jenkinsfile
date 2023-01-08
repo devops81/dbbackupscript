@@ -26,7 +26,7 @@ pipeline {
         script {
             def mailRecipients = 'devops81@gmail.com'
             def jobName = currentBuild.fullDisplayName
-            emailext body: '''${SCRIPT, template="francois.email.groovy"}''',
+            emailext body: '''${SCRIPT, template="groovy-html"}''',
             mimeType: 'text/html',
             subject: "[Jenkins] ${jobName}",
             to: "${mailRecipients}",
@@ -42,7 +42,7 @@ post {
 always {
 
      /* junit 'examples/feed-combiner-java8-webapp/target/surefire-reports/*.xml'*/
-  emailext mimeType: 'text/html', replyTo: 'devops81@gmail.com', subject: "${env.JOB_NAME} - Build# ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}", to: 'devops81@gmail.com', body:'${SCRIPT, template="francois.email.groovy"}'
+  emailext mimeType: 'text/html', replyTo: 'devops81@gmail.com', subject: "${env.JOB_NAME} - Build# ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}", to: 'devops81@gmail.com', body:'${SCRIPT, template="groovy-html"}'
 } 
 }        
 }
