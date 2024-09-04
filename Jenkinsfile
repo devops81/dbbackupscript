@@ -1,6 +1,6 @@
 pipeline {
   
-  agent {WindowsAgent}
+  agent {label 'WindowsAgent'}
  parameters {
   choice choices: ['NorthwindDB', 'DevOpsDB'], name: 'DBName' 
  }
