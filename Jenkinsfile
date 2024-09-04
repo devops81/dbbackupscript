@@ -18,7 +18,7 @@ pipeline {
 
     stage("DBBACKUP") {
       steps {
-	      powershell returnStatus: true, script: 'BackupDB.ps1'
+	      powershell returnStatus: true, script: 'C://DBBackup//BackupDB.ps1'
       }
     }
 	stage('Email') {
